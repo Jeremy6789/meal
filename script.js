@@ -12,6 +12,18 @@ function addItem(name, price, quantityId) {
     }
 
     alert(`${name} x ${quantity} 已加入訂單！`);
+    updateCurrentOrderDisplay();
+}
+
+function updateCurrentOrderDisplay() {
+    const currentOrderList = document.getElementById("currentOrder");
+    currentOrderList.innerHTML = '';
+
+    orderItems.forEach(item => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item.name} x ${item.quantity}`;
+        currentOrderList.appendChild(listItem);
+    });
 }
 
 function confirmOrder() {
@@ -20,11 +32,9 @@ function confirmOrder() {
         return;
     }
 
-    // 隱藏點餐畫面，顯示結帳畫面
     document.getElementById("menuScreen").style.display = "none";
     document.getElementById("checkoutScreen").style.display = "block";
 
-    // 更新訂單摘要
     updateOrderSummary();
 }
 
@@ -48,7 +58,6 @@ function updateOrderSummary() {
 }
 
 function exportToCSV() {
-    // 加入 BOM 以避免亂碼問題
     let csvContent = '\uFEFF名稱,數量,單價,總價\n';
     let totalAmount = 0;
 
@@ -68,10 +77,10 @@ function exportToCSV() {
 }
 
 function backToMenu() {
-    // 清空訂單並返回點餐畫面
     orderItems = [];
     document.getElementById("menuScreen").style.display = "block";
     document.getElementById("checkoutScreen").style.display = "none";
     document.getElementById("orderItems").innerHTML = '';
     document.getElementById("totalAmount").textContent = '0';
+    document.getElementById("currentOrder").innerHTML = '';
 }
