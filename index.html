@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>肯德基點餐系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>肯德基點餐系統</h1>
+
+    <!-- 點餐介面 -->
+    <section id="menu">
+        <h2>點餐介面</h2>
+        <ul>
+            <li>炸雞 - $100 <button onclick="addItem('炸雞', 100)">加入</button></li>
+            <li>漢堡 - $80 <button onclick="addItem('漢堡', 80)">加入</button></li>
+            <li>薯條 - $50 <button onclick="addItem('薯條', 50)">加入</button></li>
+            <li>飲料 - $30 <button onclick="addItem('飲料', 30)">加入</button></li>
+        </ul>
+    </section>
+
+    <!-- 訂單統計 -->
+    <section id="orderSummary">
+        <h2>訂單統計</h2>
+        <ul id="orderItems"></ul>
+        <p>總金額：$<span id="totalAmount">0</span></p>
+        <button onclick="exportToCSV()">匯出 CSV</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
