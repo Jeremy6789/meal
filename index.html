@@ -7,26 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>肯德基點餐系統</h1>
+    <div class="container">
+        <h1>肯德基點餐系統</h1>
 
-    <!-- 點餐介面 -->
-    <section id="menu">
-        <h2>點餐介面</h2>
-        <ul>
-            <li>炸雞 - $100 <button onclick="addItem('炸雞', 100)">加入</button></li>
-            <li>漢堡 - $80 <button onclick="addItem('漢堡', 80)">加入</button></li>
-            <li>薯條 - $50 <button onclick="addItem('薯條', 50)">加入</button></li>
-            <li>飲料 - $30 <button onclick="addItem('飲料', 30)">加入</button></li>
-        </ul>
-    </section>
+        <!-- 點餐畫面 -->
+        <section id="menuScreen">
+            <h2>點餐介面</h2>
+            <ul>
+                <li>
+                    炸雞 - $100
+                    <input type="number" min="1" value="1" id="quantity-chicken">
+                    <button onclick="addItem('炸雞', 100, 'quantity-chicken')">加入</button>
+                </li>
+                <li>
+                    漢堡 - $80
+                    <input type="number" min="1" value="1" id="quantity-burger">
+                    <button onclick="addItem('漢堡', 80, 'quantity-burger')">加入</button>
+                </li>
+                <li>
+                    薯條 - $50
+                    <input type="number" min="1" value="1" id="quantity-fries">
+                    <button onclick="addItem('薯條', 50, 'quantity-fries')">加入</button>
+                </li>
+                <li>
+                    飲料 - $30
+                    <input type="number" min="1" value="1" id="quantity-drink">
+                    <button onclick="addItem('飲料', 30, 'quantity-drink')">加入</button>
+                </li>
+            </ul>
+            <button onclick="confirmOrder()">確認點餐</button>
+        </section>
 
-    <!-- 訂單統計 -->
-    <section id="orderSummary">
-        <h2>訂單統計</h2>
-        <ul id="orderItems"></ul>
-        <p>總金額：$<span id="totalAmount">0</span></p>
-        <button onclick="exportToCSV()">匯出 CSV</button>
-    </section>
+        <!-- 結帳畫面 -->
+        <section id="checkoutScreen" style="display: none;">
+            <h2>結帳畫面</h2>
+            <ul id="orderItems"></ul>
+            <p>總金額：$<span id="totalAmount">0</span></p>
+            <button onclick="exportToCSV()">匯出 CSV</button>
+            <button onclick="backToMenu()">回到點餐畫面</button>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
