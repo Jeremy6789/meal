@@ -48,7 +48,8 @@ function updateOrderSummary() {
 }
 
 function exportToCSV() {
-    let csvContent = '名稱,數量,單價,總價\n';
+    // 加入 BOM 以避免亂碼問題
+    let csvContent = '\uFEFF名稱,數量,單價,總價\n';
     let totalAmount = 0;
 
     orderItems.forEach(item => {
