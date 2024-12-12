@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>獅大漢堡點餐系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 點餐前導畫面 -->
+    <div id="welcomeScreen">
+        <header class="navbar">
+            <div class="navbar-left">
+                獅大漢堡
+            </div>
+        </header>
+        <main class="welcome-container">
+            <section class="welcome-content">
+                <h1>歡迎光臨 <span class="highlight">獅大漢堡</span>！</h1>
+                <p>我們始終提供最美味的餐點給鍾愛的顧客們，無論是經典漢堡、香酥炸雞，還是清涼飲品，保證都讓您回味無窮！馬上點選按鈕開始點餐吧！</p>
+                <button id="startButton">開始點餐</button>
+            </section>
+        </main>
+    </div>
+    
+
+    <!-- 點餐系統主畫面 -->
+    <div class="container" id="menuScreen" style="display: none;">
+        <h1>獅大漢堡點餐系統</h1>
+        <section>
+            <h2>點餐介面</h2>
+            <p><a href="#currentOrder">查看目前訂單</a>
+            <a href="#item1">炸雞區</a>
+            <a href="#item2">漢堡區</a>
+            <a href="#item3">薯條區</a>
+            <a href="#item4">飲料區</a></p>
+            <ul>
+                
+                <div class="chicken" id="item1">
+                    <h3>炸雞區</h3>
+                    <img src="./img/原味炸雞.png" alt="" srcset="">
+                <li>
+                    原味炸雞 - $70
+                    <input type="number" min="0" value="0" id="quantity-chicken1">
+                    <button onclick="addItem('原味炸雞', 70, 'quantity-chicken1')">加入</button>
+                    <button onclick="removeItem('原味炸雞')">取消</button>
+                </li>
+                <br>
+                <br>
+                <img src="./img/韓式炸雞.jpg" alt="" srcset="">
+                <li>
+                    韓式炸雞 - $100
+                    <input type="number" min="0" value="0" id="quantity-chicken2">
+                    <button onclick="addItem('韓式炸雞', 100, 'quantity-chicken2')">加入</button>
+                    <button onclick="removeItem('韓式炸雞')">取消</button>
+                </li>
+                <br>
+                <br>
+                <img src="./img/蜂蜜炸雞.jpg" alt="" srcset="">
+                <li>
+                    蜂蜜炸雞 - $90
+                    <input type="number" min="0" value="0" id="quantity-chicken3">
+                    <button onclick="addItem('蜂蜜炸雞', 90, 'quantity-chicken3')">加入</button>
+                    <button onclick="removeItem('蜂蜜炸雞')">取消</button>
+                </li>
+                <br>
+                <br>
+                <img src="./img/辣味炸雞.jpg" alt="" srcset="">
+                <li>
+                    辣味炸雞 - $80
+                    <input type="number" min="0" value="0" id="quantity-chicken4">
+                    <button onclick="addItem('辣味炸雞', 80, 'quantity-chicken4')">加入</button>
+                    <button onclick="removeItem('辣味炸雞')">取消</button>
+                </li>
+                </div>
+                <div class="burger" id="item2">
+                    <h3>漢堡區</h3>
+                    <img src="./img/火腿漢堡.jpg" alt="" srcset="">
+                <li>
+                    火腿漢堡 - $40
+                    <input type="number" min="0" value="0" id="quantity-burger1">
+                    <button onclick="addItem('火腿漢堡', 40, 'quantity-burger1')">加入</button>
+                    <button onclick="removeItem('火腿漢堡')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/麥香雞漢堡.jpg" alt="" srcset="">
+                <li>
+                    麥香雞腿堡 - $70
+                    <input type="number" min="0" value="0" id="quantity-burger2">
+                    <button onclick="addItem('麥香雞漢堡', 70, 'quantity-burger2')">加入</button>
+                    <button onclick="removeItem('麥香雞漢堡')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/魚排漢堡.jpg" alt="" srcset="">
+                <li>
+                    魚排漢堡 - $65
+                    <input type="number" min="0" value="0" id="quantity-burger3">
+                    <button onclick="addItem('魚排漢堡', 65, 'quantity-burger3')">加入</button>
+                    <button onclick="removeItem('魚排漢堡雞')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/和牛漢堡.jpg" alt="" srcset="">
+                <li>
+                    和牛漢堡 - $100
+                    <input type="number" min="0" value="0" id="quantity-burger4">
+                    <button onclick="addItem('和牛漢堡', 100, 'quantity-burger4')">加入</button>
+                    <button onclick="removeItem('和牛漢堡')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/里肌豬漢堡.jpeg" alt="" srcset="">
+                <li>
+                    里肌豬漢堡 - $75
+                    <input type="number" min="0" value="0" id="quantity-burger5">
+                    <button onclick="addItem('里肌豬漢堡', 75, 'quantity-burger5')">加入</button>
+                    <button onclick="removeItem('里肌豬漢雞')">取消</button>
+                </li>
+                </div>
+                <div class="french" id="item3">
+                    <h3>薯條區</h3>
+                    <img src="./img/原味薯條.jpg" alt="" srcset="">
+                <li>
+                    原味薯條 - $40
+                    <input type="number" min="0" value="0" id="quantity-fries1">
+                    <button onclick="addItem('原味薯條', 40, 'quantity-fries1')">加入</button>
+                    <button onclick="removeItem('原味薯條')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/辣味薯條.jpg" alt="" srcset="">
+                <li>
+                    辣味薯條 - $45
+                    <input type="number" min="0" value="0" id="quantity-fries2">
+                    <button onclick="addItem('辣味薯條', 45, 'quantity-fries2')">加入</button>
+                    <button onclick="removeItem('辣味薯雞')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/地瓜薯條.jpg" alt="" srcset="">
+                <li>
+                    地瓜薯條 - $50
+                    <input type="number" min="0" value="0" id="quantity-fries3">
+                    <button onclick="addItem('地瓜薯條', 50, 'quantity-fries3')">加入</button>
+                    <button onclick="removeItem('地瓜薯條')">取消</button>
+                </li>
+                </div>
+                <div class="drink" id="item4">
+                    <h3>飲料區</h3>
+                    <img src="./img/檸檬紅茶.jpg" alt="" srcset="">
+                <li>
+                    檸檬紅茶 - $25
+                    <input type="number" min="0" value="0" id="quantity-drink1">
+                    <button onclick="addItem('檸檬紅茶', 25, 'quantity-drink1')">加入</button>
+                    <button onclick="removeItem('檸檬紅茶')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/碳酸飲料.jpg" alt="" srcset="">
+                <li>
+                    碳酸飲料 - $30
+                    <input type="number" min="0" value="0" id="quantity-drink2">
+                    <button onclick="addItem('碳酸飲料', 30, 'quantity-drink2')">加入</button>
+                    <button onclick="removeItem('碳酸飲料')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/奶茶.jpg" alt="" srcset="">
+                <li>
+                    蜂蜜奶茶 - $55
+                    <input type="number" min="0" value="0" id="quantity-drink3">
+                    <button onclick="addItem('奶茶', 55, 'quantity-drink3')">加入</button>
+                    <button onclick="removeItem('奶茶')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/咖啡.jpg" alt="" srcset="">
+                <li>
+                    咖啡 - $45
+                    <input type="number" min="0" value="0" id="quantity-drink4">
+                    <button onclick="addItem('咖啡', 45, 'quantity-drink4')">加入</button>
+                    <button onclick="removeItem('咖啡')">取消</button>
+                </li>
+                <br><br>
+                <img src="./img/玉米濃湯.jpg" alt="" srcset="">
+                <li>
+                    玉米濃湯 - $50
+                    <input type="number" min="0" value="0" id="quantity-drink5">
+                    <button onclick="addItem('玉米濃湯', 50, 'quantity-drink5')">加入</button>
+                    <button onclick="removeItem('玉米濃湯')">取消</button>
+                </li>
+                </div>
+                
+                <form:action> 
+                    <label for="comment">任何特殊需求</label>
+                    <br>
+                    <textarea name="comment" id="comment" cols="80" rows="10"></textarea>
+                </form>
+            
+            </ul>
+        </section>
+
+        <h3>目前點餐</h3>
+        <ul id="currentOrder"></ul>
+        <button onclick="confirmOrder()">確認點餐</button>
+    </div>
+
+    <!-- 結帳畫面 -->
+    <section id="checkoutScreen" style="display: none;">
+        <h2>結帳畫面</h2>
+        <ul id="orderItems"></ul>
+        <p>總金額：$<span id="totalAmount">0</span></p>
+        <button onclick="exportToCSV()">匯出 CSV</button>
+        <button onclick="backToMenu()">回到點餐畫面</button>
+        <select id="means" style="cursor:pointer;" onchange="select()">選擇付款方式
+            <option value="現金">現金</option>
+            <option value="信用卡">信用卡</option>
+            <option value="linepay">linepay</option>
+            <option value="applepay">applepay</option>               
+        </select>
+    </section>
+
+    <!-- 付款畫面 -->
+    <section id="payScreen" style="display: none;">
+        <h3>謝謝你的光臨，歡迎您下次光臨</h3>
+        <p>您的取餐編號是：<span id="pickup-number"></span></p>
+        <button onclick="backToMenu()">回到點餐畫面</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
