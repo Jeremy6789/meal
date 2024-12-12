@@ -1,0 +1,146 @@
+/* 讓畫面元素置中 */
+html, body {
+    overflow: auto; /* 或 scroll */
+    }
+body {
+    background-color: rgba(158, 171, 171, 0.749);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 20px; /* 整體字體放大 */
+}
+
+img{
+    float: left;
+    height :100px;
+    width: 120px;
+  
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+#item1,#item2,#item3,#item4{
+    border: 3px,solid,brown;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    overflow: auto;
+}
+h1, h2 {
+    color: #d32f2f;
+}
+
+button {
+    margin: 5px;
+    padding: 12px 20px; /* 按鈕尺寸放大 */
+    font-size: 18px;
+    background-color: #f4a742;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffc107;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+input[type="number"] {
+    width: 60px;
+    margin: 0 10px;
+    font-size: 18px; /* 調整數量輸入框字體大小 */
+}
+/* 前導畫面樣式 */
+#welcomeScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ffcc00, #ff9900);
+    text-align: center;
+    color: #fff;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.welcome-content {
+    max-width: 600px;
+}
+
+.welcome-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.welcome-content .highlight {
+    color: #ffe680;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#welcomeScreen button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#welcomeScreen button:hover {
+    background-color: #cc5200;
+    transform: scale(1.05);
+}
+
+.welcome-image {
+    max-width: 400px;
+    text-align: center;
+}
+
+.welcome-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
